@@ -10,17 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#12303a;        /* deep river teal */
-  --ink-2:#1d4552;
-  --fresh:#2f8f83;      /* rinse teal */
-  --rinse:#e8f1ee;      /* pale cool surface */
-  --mist:#f5f9f8;
-  --lemon:#f2c14e;      /* lemon cleaner */
-  --lemon-d:#e0aa2c;
+  --ink:#1a1814;        /* logo black, warmed slightly */
+  --ink-2:#2a2620;
+  --fresh:#985a0a;      /* logo bronze, for accent text on light */
+  --rinse:#f3f1ec;      /* soft warm grey surface */
+  --mist:#faf9f6;
+  --lemon:#d8981c;      /* logo gold */
+  --lemon-d:#c4860e;
   --paper:#ffffff;
-  --text:#22343a;
-  --muted:#5b6f74;
-  --line:#d5e3df;
+  --text:#2b2823;
+  --muted:#6b655b;
+  --line:#e6e1d7;
   --font:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   color-scheme:light;
   box-sizing:border-box;
@@ -49,7 +49,7 @@ p{margin:0}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
 /* top bar */
-.topbar{background:var(--ink);color:#d9e8e4;font-size:.88rem}
+.topbar{background:var(--ink);color:#d8d2c6;font-size:.88rem}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0}
 .topbar a{text-decoration:none;color:#fff;font-weight:600}
 .topbar a:hover{color:var(--lemon)}
@@ -60,11 +60,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);ba
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#fff}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.brand img{height:54px;width:auto}
-.brand-mark{width:46px;height:46px;border-radius:14px 14px 14px 4px;background:var(--ink);display:grid;place-items:center;flex:none}
-.brand-mark svg{width:26px;height:26px}
-.brand-text{font-weight:800;line-height:1.05;font-size:1.05rem;letter-spacing:-.01em}
-.brand-text small{display:block;font-weight:500;font-size:.78rem;color:var(--muted);letter-spacing:0}
+.brand img{height:64px;width:auto}
 nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:30px}
 nav.main a{text-decoration:none;font-weight:600;color:var(--ink);font-size:.98rem;padding:6px 0;border-bottom:2px solid transparent}
 nav.main a:hover,nav.main a[aria-current]{border-color:var(--lemon)}
@@ -83,25 +79,26 @@ nav.main a:hover,nav.main a[aria-current]{border-color:var(--lemon)}
 .hero-svc{margin:42px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .hero-svc li{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.9rem;font-weight:500;color:var(--ink)}
 .hero-visual{position:relative}
-.hero-photo{border-radius:220px 220px 28px 28px;overflow:hidden;aspect-ratio:3/4;background:var(--rinse);box-shadow:0 30px 60px -30px rgba(18,48,58,.45)}
+.hero-photo{border-radius:220px 220px 28px 28px;overflow:hidden;aspect-ratio:3/4;background:var(--rinse);box-shadow:0 30px 60px -30px rgba(26,24,20,.45)}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 
 /* the inspection card: signature element */
-.inspect{position:absolute;left:-56px;bottom:40px;width:270px;background:var(--paper);border-radius:18px;padding:20px 22px 18px;box-shadow:0 24px 50px -18px rgba(18,48,58,.4);border-top:6px solid var(--lemon)}
+.inspect{position:absolute;left:-56px;bottom:40px;width:270px;background:var(--paper);border-radius:18px;padding:20px 22px 18px;box-shadow:0 24px 50px -18px rgba(26,24,20,.4);border-top:6px solid var(--lemon)}
 .inspect h3{font-size:1rem;font-weight:800;margin-bottom:4px}
 .inspect p{font-size:.82rem;color:var(--muted);margin-bottom:12px}
 .inspect ul{list-style:none;margin:0;padding:0}
 .inspect li{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px dashed var(--line);font-weight:600;font-size:.94rem;color:var(--ink)}
 .tick{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none;transition:all .3s}
 .tick svg{width:12px;height:12px;stroke:#fff;stroke-width:3.5;fill:none;stroke-dasharray:20;stroke-dashoffset:20}
-.inspect li.done .tick{background:var(--fresh);border-color:var(--fresh)}
+.inspect li.done .tick{background:var(--lemon);border-color:var(--lemon)}
+.inspect li.done .tick svg{stroke:var(--ink)}
 .inspect li.done .tick svg{stroke-dashoffset:0;transition:stroke-dashoffset .35s .1s}
 .inspect .stamp{margin-top:12px;display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:.9rem;color:var(--fresh);opacity:0;transform:translateY(4px);transition:all .4s}
 .inspect.complete .stamp{opacity:1;transform:none}
 .stamp span{background:var(--rinse);border-radius:6px;padding:4px 8px}
 
 /* why us */
-.why{background:var(--ink);color:#d3e3df;padding:96px 0}
+.why{background:var(--ink);color:#d8d2c6;padding:96px 0}
 .why .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:stretch}
 .why h2{color:#fff}
 .why-intro > p{margin:18px 0 36px;font-size:1.1rem;max-width:26em}
@@ -145,7 +142,7 @@ nav.main a:hover,nav.main a[aria-current]{border-color:var(--lemon)}
 .insured .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:stretch;width:min(1280px,100%)}
 .insured-photo{min-height:520px;background:var(--line)}
 .insured-photo img{width:100%;height:100%;object-fit:cover}
-.insured-copy{padding:80px 56px;background:var(--paper);margin:56px 0 56px -80px;border-radius:24px;position:relative;align-self:center;box-shadow:0 30px 60px -36px rgba(18,48,58,.35)}
+.insured-copy{padding:80px 56px;background:var(--paper);margin:56px 0 56px -80px;border-radius:24px;position:relative;align-self:center;box-shadow:0 30px 60px -36px rgba(26,24,20,.35)}
 .badge{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--fresh);margin-bottom:18px}
 .badge svg{width:28px;height:28px}
 .insured-copy h2{font-size:clamp(1.9rem,3.3vw,2.6rem)}
@@ -161,31 +158,35 @@ nav.main a:hover,nav.main a[aria-current]{border-color:var(--lemon)}
 .reviews h2{max-width:16em;margin-inline:auto}
 .reviews p{color:var(--muted);margin:16px auto 30px;max-width:32em;font-size:1.08rem}
 .g-chip{display:inline-flex;align-items:center;gap:10px;font-weight:700}
+.g-chip img{width:22px;height:22px}
+.avatars{display:flex;justify-content:center;margin:0 0 26px}
+.avatars img{width:52px;height:52px;border-radius:50%;border:3px solid var(--paper);margin-left:-12px;object-fit:cover;box-shadow:0 4px 10px -4px rgba(26,24,20,.35)}
+.avatars img:first-child{margin-left:0}
+.g-badge{display:inline-flex;align-items:center;gap:10px;background:var(--rinse);border-radius:999px;padding:8px 16px 8px 10px;font-weight:600;color:var(--ink);margin-bottom:24px}
+.g-badge img{width:24px;height:24px}
 .g-chip svg{width:22px;height:22px}
 
 /* cta */
 .cta{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
 .cta-bg{position:absolute;inset:0}
-.cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.28}
+.cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.22}
 .cta .wrap{position:relative;padding:100px 0;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
 .cta h2{color:#fff;font-size:clamp(2.2rem,5vw,4rem);font-weight:900}
-.cta p{margin-top:16px;font-size:1.12rem;color:#d6e6e2;max-width:28em}
+.cta p{margin-top:16px;font-size:1.12rem;color:#ded8cc;max-width:28em}
 .cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .cta-actions .btn{min-width:260px;justify-content:center}
 
 /* footer */
-footer{background:#0c242c;color:#a9c2bd;font-size:.95rem}
+footer{background:#100f0d;color:#b3ac9f;font-size:.95rem}
 footer .wrap{padding:76px 0 0}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px}
 footer h3{color:#fff;font-size:1.02rem;font-weight:700;margin-bottom:16px;letter-spacing:0}
 footer ul{list-style:none;margin:0;padding:0}
 footer li{padding:5px 0}
-footer a{text-decoration:none;color:#a9c2bd}
+footer a{text-decoration:none;color:#b3ac9f}
+.f-brand .brand img{height:64px}
 footer a:hover{color:var(--lemon)}
 .f-brand .brand{color:#fff;margin-bottom:18px}
-.f-brand .brand-mark{background:var(--lemon)}
-.f-brand .brand-mark svg path{fill:var(--ink)}
-.f-brand .brand-text small{color:#8fb0aa}
 .f-brand p{max-width:24em}
 .f-contact li{display:flex;gap:10px;align-items:flex-start}
 .f-contact svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--lemon)}
@@ -235,7 +236,7 @@ footer a:hover{color:var(--lemon)}
   .checks{columns:1}
   .f-grid{grid-template-columns:1fr}
   .cta-actions .btn{min-width:0;width:100%}
-  .brand-text{font-size:.95rem}
+  .brand img{height:50px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -257,11 +258,7 @@ footer a:hover{color:var(--lemon)}
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="https://www.edmontoncleaninggroup.ca" aria-label="Edmonton Cleaning Group home">
-      <!-- Replace this block with: <img src="images/logo.png" alt="Edmonton Cleaning Group logo"> once the original logo file is added -->
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#f2c14e" d="M12 2c.4 3.9 2.1 5.6 6 6-3.9.4-5.6 2.1-6 6-.4-3.9-2.1-5.6-6-6 3.9-.4 5.6-2.1 6-6zm6.5 11c.2 2 1.1 2.8 3 3-1.9.2-2.8 1.1-3 3-.2-1.9-1.1-2.8-3-3 1.9-.2 2.8-1 3-3zM6 15c.2 2.3 1.2 3.3 3.5 3.5C7.2 18.7 6.2 19.7 6 22c-.2-2.3-1.2-3.3-3.5-3.5C4.8 18.3 5.8 17.3 6 15z"/></svg></span>
-      <span class="brand-text">Edmonton Cleaning Group<small>Edmonton, Alberta</small></span>
-    </a>
+    <a class="brand" href="https://www.edmontoncleaninggroup.ca"><img src="images/logo.png" alt="Edmonton Cleaning Group professional cleaning company logo" width="750" height="200"></a>
     <nav class="main" id="mainnav" aria-label="Main">
       <ul>
         <li><a href="https://www.edmontoncleaninggroup.ca" aria-current="page">Home</a></li>
@@ -396,12 +393,11 @@ footer a:hover{color:var(--lemon)}
 
 <section class="reviews">
   <div class="wrap">
-    <div class="stars" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
-    </div>
+    <div class="avatars" aria-hidden="true"><img src="images/review-avatar-1.jpg" alt="" width="52" height="52" loading="lazy"><img src="images/review-avatar-2.jpg" alt="" width="52" height="52" loading="lazy"><img src="images/review-avatar-3.jpg" alt="" width="52" height="52" loading="lazy"><img src="images/review-avatar-4.jpg" alt="" width="52" height="52" loading="lazy"><img src="images/review-avatar-5.jpg" alt="" width="52" height="52" loading="lazy"><img src="images/review-avatar-6.jpg" alt="" width="52" height="52" loading="lazy"></div>
+    <div class="g-badge"><img src="images/google-logo.png" alt="Google" width="24" height="24">Real Google reviews</div>
     <h2>Trusted by Edmonton clients</h2>
-    <p>Real Google reviews from the homes and businesses we clean. See what our clients say.</p>
-    <a class="btn btn-line g-chip" href="https://www.google.com/search?q=Edmonton+Cleaning+Group+reviews" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.2-2.7l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.9 0-5.3-1.9-6.2-4.5H2.2v2.8A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.8 14.2a6.6 6.6 0 0 1 0-4.3V7.1H2.2a11 11 0 0 0 0 9.9z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.1-3.1A11 11 0 0 0 2.2 7.1l3.6 2.8C6.7 7.3 9.1 5.4 12 5.4z"/></svg>Read our Google reviews</a>
+    <p>What our clients say about our cleaning in Edmonton homes and businesses.</p>
+    <a class="btn btn-line g-chip" href="https://www.google.com/search?q=Edmonton+Cleaning+Group+reviews" target="_blank" rel="noopener"><img src="images/google-logo.png" alt="" width="22" height="22">Read our Google reviews</a>
   </div>
 </section>
 
@@ -425,10 +421,7 @@ footer a:hover{color:var(--lemon)}
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a class="brand" href="https://www.edmontoncleaninggroup.ca">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2c.4 3.9 2.1 5.6 6 6-3.9.4-5.6 2.1-6 6-.4-3.9-2.1-5.6-6-6 3.9-.4 5.6-2.1 6-6zm6.5 11c.2 2 1.1 2.8 3 3-1.9.2-2.8 1.1-3 3-.2-1.9-1.1-2.8-3-3 1.9-.2 2.8-1 3-3zM6 15c.2 2.3 1.2 3.3 3.5 3.5C7.2 18.7 6.2 19.7 6 22c-.2-2.3-1.2-3.3-3.5-3.5C4.8 18.3 5.8 17.3 6 15z"/></svg></span>
-          <span class="brand-text">Edmonton Cleaning Group<small>Edmonton, Alberta</small></span>
-        </a>
+        <a class="brand" href="https://www.edmontoncleaninggroup.ca"><img src="images/logo-white.png" alt="Edmonton Cleaning Group logo" width="750" height="200"></a>
         <p>Trusted fully insured cleaning company serving Edmonton homes and businesses with detailed, professional results.</p>
         <div class="socials">
           <a href="http://facebook.com/profile.php?id=61581576146488" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.6C11.3 2 10.5 3.6 10.5 6v2H8v3h2.5v11H14V11h2.6l.4-3z"/></svg></a>

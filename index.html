@@ -130,10 +130,9 @@ nav.main a:hover,nav.main a[aria-current]{border-color:var(--lemon)}
 .svc-item.is-active .svc-body{grid-template-rows:1fr}
 .svc-body p{padding:0 14px 24px;color:var(--muted);max-width:34em}
 .svc-body img{display:none}
-.svc-stage{position:sticky;top:120px;aspect-ratio:4/3;border-radius:24px 24px 24px 120px;overflow:hidden;background:var(--rinse)}
-.svc-stage figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .45s}
-.svc-stage figure.is-active{opacity:1}
-.svc-stage img{width:100%;height:100%;object-fit:cover}
+.svc-stage{position:relative;aspect-ratio:4/3;border-radius:24px 24px 24px 64px;overflow:hidden;background:var(--rinse);margin:0}
+.svc-stage img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.svc-stage img.is-swapping{opacity:0}
 .svc-stage figcaption{position:absolute;right:16px;bottom:16px;background:var(--paper);color:var(--ink);font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px}
 .svc-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
 
@@ -217,9 +216,11 @@ footer a:hover{color:var(--lemon)}
   .insured-copy{margin:-80px 20px 56px;padding:48px 30px}
   .why-photo{display:none}
 }
-@media (max-width:820px){
+@media (max-width:1020px){
   .svc-stage{display:none}
-  .svc-body img{display:block;border-radius:16px;margin:0 14px 16px;width:calc(100% - 28px);aspect-ratio:4/3;object-fit:cover}
+  .svc-body img{display:block;border-radius:16px;margin:0 14px 16px;width:calc(100% - 28px);max-width:640px;aspect-ratio:4/3;object-fit:cover}
+}
+@media (max-width:820px){
   .svc-head{flex-direction:column;align-items:flex-start;gap:16px}
   .svc{gap:0}
   .svc-cta{margin-top:28px}
@@ -315,38 +316,31 @@ footer a:hover{color:var(--lemon)}
       <ul class="svc-list">
         <li class="svc-item is-active" data-i="0">
           <button class="svc-btn" aria-expanded="true">Residential cleaning<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-residential.jpg" alt="" loading="lazy"><p>Regular and deep cleaning for homes, apartments and condos in Edmonton.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-residential.jpg" alt="Residential cleaning in an Edmonton home" data-cap="Homes, apartments &amp; condos"><p>Regular and deep cleaning for homes, apartments and condos in Edmonton.</p></div></div>
         </li>
         <li class="svc-item" data-i="1">
           <button class="svc-btn" aria-expanded="false">Move-out / move-in cleaning<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-move-out.jpg" alt="" loading="lazy"><p>Detailed cleaning for vacant homes, condos and apartments. We focus on kitchens, bathrooms, baseboards, floors and inspection-ready results.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-move-out.jpg" alt="Move-out cleaning of a vacant apartment" data-cap="Inspection-ready results"><p>Detailed cleaning for vacant homes, condos and apartments. We focus on kitchens, bathrooms, baseboards, floors and inspection-ready results.</p></div></div>
         </li>
         <li class="svc-item" data-i="2">
           <button class="svc-btn" aria-expanded="false">Carpet steam cleaning<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-carpet.jpg" alt="" loading="lazy"><p>Steam cleaning for carpets and rugs. Helps remove dirt and odours and refreshes your home.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-carpet.jpg" alt="Carpet steam cleaning" data-cap="Carpets &amp; rugs"><p>Steam cleaning for carpets and rugs. Helps remove dirt and odours and refreshes your home.</p></div></div>
         </li>
         <li class="svc-item" data-i="3">
           <button class="svc-btn" aria-expanded="false">Sofa &amp; upholstery cleaning<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-sofa.jpg" alt="" loading="lazy"><p>Deep steam cleaning for sofas, chairs and upholstery fabrics.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-sofa.jpg" alt="Sofa and upholstery steam cleaning" data-cap="Sofas, chairs &amp; fabrics"><p>Deep steam cleaning for sofas, chairs and upholstery fabrics.</p></div></div>
         </li>
         <li class="svc-item" data-i="4">
           <button class="svc-btn" aria-expanded="false">Car interior cleaning<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-car-interior.jpg" alt="" loading="lazy"><p>Interior car cleaning: vacuuming, wipe-down, dashboard cleaning, seats and floor cleaning.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-car-interior.jpg" alt="Car interior vacuuming" data-cap="Seats, dash &amp; floors"><p>Interior car cleaning: vacuuming, wipe-down, dashboard cleaning, seats and floor cleaning.</p></div></div>
         </li>
         <li class="svc-item" data-i="5">
           <button class="svc-btn" aria-expanded="false">Yard cleanup<span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-          <div class="svc-body"><div><img src="images/service-yard.jpg" alt="" loading="lazy"><p>Yard cleaning and outdoor cleanup services for homes and properties in Edmonton. Fast, detailed and reliable service.</p></div></div>
+          <div class="svc-body"><div><img src="images/service-yard.jpg" alt="Yard cleanup and leaf raking" data-cap="Homes &amp; properties"><p>Yard cleaning and outdoor cleanup services for homes and properties in Edmonton. Fast, detailed and reliable service.</p></div></div>
         </li>
       </ul>
       <div>
-        <div class="svc-stage" aria-hidden="true">
-          <figure class="is-active"><img src="images/service-residential.jpg" alt=""><figcaption>Homes, apartments &amp; condos</figcaption></figure>
-          <figure><img src="images/service-move-out.jpg" alt=""><figcaption>Inspection-ready results</figcaption></figure>
-          <figure><img src="images/service-carpet.jpg" alt=""><figcaption>Carpets &amp; rugs</figcaption></figure>
-          <figure><img src="images/service-sofa.jpg" alt=""><figcaption>Sofas, chairs &amp; fabrics</figcaption></figure>
-          <figure><img src="images/service-car-interior.jpg" alt=""><figcaption>Seats, dash &amp; floors</figcaption></figure>
-          <figure><img src="images/service-yard.jpg" alt=""><figcaption>Homes &amp; properties</figcaption></figure>
-        </div>
+        <figure class="svc-stage"><img id="svcImg" src="images/service-residential.jpg" alt="Residential cleaning in an Edmonton home" width="1065" height="795"><figcaption id="svcCap">Homes, apartments &amp; condos</figcaption></figure>
         <div class="svc-cta">
           <a class="btn btn-lemon" href="https://api.whatsapp.com/send?phone=17809343966" target="_blank" rel="noopener">Get a free quote</a>
           <a class="btn btn-line" href="https://www.edmontoncleaninggroup.ca/services">View all services</a>
@@ -476,17 +470,24 @@ footer a:hover{color:var(--lemon)}
   items.forEach(function(li,i){setTimeout(function(){li.classList.add('done')},700+i*450)});
   setTimeout(function(){card.classList.add('complete')},700+items.length*450+200);
 })();
-// services index
+// services index: one photo, swapped on click/keyboard or real mouse movement (not on scroll)
 (function(){
-  var items=document.querySelectorAll('.svc-item'),figs=document.querySelectorAll('.svc-stage figure');
+  var items=[].slice.call(document.querySelectorAll('.svc-item')),img=document.getElementById('svcImg'),cap=document.getElementById('svcCap'),cur=0,t;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function show(i){
+    if(i===cur)return; cur=i;
     items.forEach(function(it,k){var on=k===i;it.classList.toggle('is-active',on);it.querySelector('.svc-btn').setAttribute('aria-expanded',on)});
-    figs.forEach(function(f,k){f.classList.toggle('is-active',k===i)});
+    var src=items[i].querySelector('.svc-body img');
+    function apply(){img.src=src.getAttribute('src');img.alt=src.alt;cap.innerHTML=src.getAttribute('data-cap');img.classList.remove('is-swapping')}
+    clearTimeout(t);
+    if(reduce){apply();return}
+    img.classList.add('is-swapping'); t=setTimeout(apply,180);
   }
+  var desk=window.matchMedia('(min-width:1021px) and (hover:hover)');
   items.forEach(function(it,i){
     var btn=it.querySelector('.svc-btn');
     btn.addEventListener('click',function(){show(i)});
-    btn.addEventListener('mouseenter',function(){if(window.matchMedia('(min-width:821px) and (hover:hover)').matches)show(i)});
+    btn.addEventListener('mousemove',function(){if(desk.matches)show(i)});
   });
 })();
 </script>
